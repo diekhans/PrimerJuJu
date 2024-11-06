@@ -8,6 +8,7 @@
   * GOOD - primer design was successful with no off-target alignments
   * NOT_GENOME_UNIQUE - has off-target genomic alignments
   * NOT_TRANSCRIPTOME_UNIQUE - has off-target transcriptome alignments
+  * FAILED - thermodynamic or other checks on the primer failed
   * NO_PRIMERS - primer3 did not find any primers
 * transcript_id - transcript that was used for the design
 * browser - coordinates of the target transcript, as a link to the UCSC Genome Browser that includes the generated track hub

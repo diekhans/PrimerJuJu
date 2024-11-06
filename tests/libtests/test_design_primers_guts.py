@@ -52,9 +52,31 @@ def test_FBXL16(request, config_hg38, wtc11_targets_specs_set1):
                                             "FBXL16+1")
     assert len(primer_designs.designs) == 5
 
+def test_thermo_FBXL16(request, config_hg38_thermo, wtc11_targets_specs_set1):
+    # Negative strand, create primer that went beyond 3' end of region.  This maybe something
+    # primer3 does
+
+    primer_designs = run_primer_design_test(get_test_id(request), config_hg38_thermo, wtc11_targets_specs_set1,
+                                            "FBXL16+1")
+    assert len(primer_designs.designs) == 5
+
 def test_SLC46A1(request, config_hg38, wtc11_targets_specs_set1):
     # both regions in exons, multiple transcript in target
     primer_designs = run_primer_design_test(get_test_id(request), config_hg38, wtc11_targets_specs_set1,
+                                            "SLC46A1+1")
+
+    assert primer_designs.target_id == 'SLC46A1+1'
+    assert len(primer_designs.designs) == 5
+
+    p3p = primer_designs.designs[0].primer3_pair
+    assert p3p.PRIMER_LEFT == [815, 20]
+    assert p3p.PRIMER_RIGHT == [1662, 20]
+    assert p3p.PRIMER_LEFT_SEQUENCE == 'CTCTTCACGTTCCGTCACCA'
+    assert p3p.PRIMER_RIGHT_SEQUENCE == 'TCCTAGACAGAGGCTGGGTC'
+
+def test_thermo_SLC46A1(request, config_hg38_thermo, wtc11_targets_specs_set1):
+    # both regions in exons, multiple transcript in target
+    primer_designs = run_primer_design_test(get_test_id(request), config_hg38_thermo, wtc11_targets_specs_set1,
                                             "SLC46A1+1")
 
     assert primer_designs.target_id == 'SLC46A1+1'

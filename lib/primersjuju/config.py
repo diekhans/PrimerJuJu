@@ -2,12 +2,15 @@
 # your config.py should import this and construct a instance of
 # PrimersJuJuConfig in a variable named 'config'
 #
+from dataclasses import dataclass
+from typing import Optional, Tuple
+import primer3
 from primersjuju.uniqueness_query import UniquenessQuery, IsPcrServerSpec
 from primersjuju.genome_data import GenomeData
 
 class GenomeConfig:
     """Configuration for a particular assembly.  Setting either of ispcr specs to None
-    cases the corresponding off target query to be skupped."""
+    cases the corresponding off target query to be skipped."""
 
     def __init__(self,
                  genome_data: GenomeData,
@@ -31,6 +34,32 @@ class GenomeConfig:
                                                       self.genome_ispcr_spec, self.transcriptome_ispcr_spec)
         return self.__uniqueness_query
 
+class Primer3ThermoArgs(primer3.argdefaults.Primer3PyArguments):
+    """Primer3 thermoanalysis arguments with standard defaults."""
+    pass
+
+@dataclass
+class Primer3ThermoFitlers:
+    """Primer3 thermoanalysis filters.
+    For floating range tests, values are either tuples of (min, max) or None to not run the test.
+    For stability tests, it is the minimum delta-G or None
+    """
+    tm_range: Optional[Tuple[float, float]] = None
+    hairpin_min_dg: Optional[float] = None
+    homodimer_min_dg: Optional[float] = None
+    heterodimer_min_dg: Optional[float] = None
+    end_stability_min_dg: Optional[float] = None
+
+class DefaultThermoFitlers(Primer3ThermoFitlers):
+    """A default set of Primer3ThermoFitlers"""
+    def __init__(self):
+        super().__init__(tm_range=(55.0, 70.0),
+                         hairpin_min_dg=-3.0,
+                         homodimer_min_dg=-3.0,
+                         heterodimer_min_dg=-5.0,
+                         end_stability_min_dg=-10.0)
+
+
 class Primer3Config:
     """Options to pass to primer3, see primer3 manual Global Input Tags for a
     description.
@@ -49,10 +78,18 @@ class Primer3Config:
         self.PRIMER_OPT_SIZE = 20
         self.PRIMER_MIN_SIZE = 18
         self.PRIMER_MAX_SIZE = 22
+        self.PRIMER_NUM_RETURN = 5
 
         # library files
         self.misprime_lib = None
         self.mishyb_lib = None
+
+        ##
+        # thermoanalysis
+        ##
+        self.thermo_filters = None  # Primer3ThermoFilters, set of filter by thermodynamic attributes
+        self.thermo_args = None  # Primer3ThermoArgs, use defaults if None
+
 
 _default_primer3_config = Primer3Config()
 

@@ -1,7 +1,8 @@
 import pytest
 import os.path as osp
+import copy
 from . import mydir
-from primersjuju.config import PrimersJuJuConfig
+from primersjuju.config import PrimersJuJuConfig, DefaultThermoFitlers, Primer3ThermoArgs
 from primersjuju.genome_data import GenomeData
 from primersjuju.primer_target_spec import primer_target_specs_read
 from primersjuju.uniqueness_query import IsPcrServerSpec, UniquenessQuery
@@ -23,6 +24,13 @@ def config_hg38():
     config = PrimersJuJuConfig()
     config.add_genome(test_gdata)
     config.genome = test_gdata
+    return config
+
+@pytest.fixture(scope="session")
+def config_hg38_thermo(config_hg38):
+    config = copy.deepcopy(config_hg38)
+    config.primer3.thermo_filters = DefaultThermoFitlers()
+    config.primer3.thermo_args = Primer3ThermoArgs()
     return config
 
 @pytest.fixture(scope="session")

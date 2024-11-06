@@ -8,11 +8,12 @@ import pprint
 import primer3
 from pycbio.sys.objDict import ObjDict
 from . import PrimersJuJuDataError, PrimersJuJuError
+from .primer3_thermo import primer3_thermo_evals
 
 # Notes:
 # forces the use of 0-based indexing
 
-_global_args_defaults = ObjDict(PRIMER_TASK="generic",
+_global_args_defaults = ObjDict(PRIMER_TASK="pick_pcr_primers",
                                 PRIMER_FIRST_BASE_INDEX=0,
                                 PRIMER_PICK_LEFT_PRIMER=1,
                                 PRIMER_PICK_RIGHT_PRIMER=1,
@@ -27,6 +28,8 @@ class Primer3Pair(ObjDict):
     """
     def __init__(self, result_num):
         self.result_num = result_num
+        self.passed = True
+        self.thermo_results = None   # Primer3ThermoResults
 
     def dump(self, fh=sys.stderr):
         pp = pprint.PrettyPrinter(stream=fh, sort_dicts=False, indent=4)
@@ -161,14 +164,7 @@ def _check_common_errors(target_transcript, seq_args, global_args):
         _check_region(region_features, "PRIMER_MIN_SIZE", global_args.PRIMER_MIN_SIZE)
         _check_region(region_features, "PRIMER_MAX_SIZE", global_args.PRIMER_MAX_SIZE)
 
-def primer3_design(primer3_config, target_transcript, *, debug=False):
-    """main entry to run primer3
-    global_args defined here:
-    https://www.primer3plus.com/primer3plusHelp.html#globalTags
-
-    global PRIMER_FIRST_BASE_INDEX must be zero.
-    """
-
+def design_primers(primer3_config, target_transcript, *, debug=False):
     global_args = _build_global_args(primer3_config, target_transcript)
     seq_args = _build_seq_args(primer3_config, target_transcript)
     if debug:
@@ -189,6 +185,18 @@ def primer3_design(primer3_config, target_transcript, *, debug=False):
         raise PrimersJuJuError(f"primer3 warnings: {results.PRIMER_WARNINGS}")
     return results
 
+def primer3_design(primer3_config, target_transcript, *, debug=False):
+    """main entry to run primer3
+    global_args defined here:
+    https://www.primer3plus.com/primer3plusHelp.html#globalTags
+
+    global PRIMER_FIRST_BASE_INDEX must be zero.
+    """
+    results = design_primers(primer3_config, target_transcript, debug=debug)
+    if primer3_config.thermo_filters is not None:
+        primer3_thermo_evals(results, primer3_config)
+    return results
+
 def primer3_dump_args(fh, primer3_config, target_transcript, *, global_args=None, seq_args=None):
     "print the arguments that will be used for this design"
     if global_args is None:
@@ -201,6 +209,10 @@ def primer3_dump_args(fh, primer3_config, target_transcript, *, global_args=None
     pp.pprint(global_args)
     print("seq_args:", file=fh)
     pp.pprint(seq_args)
+    print("thermo_args:", file=fh)
+    pp.pprint(primer3_config.thermo_args)
+    print("thermo_filters:", file=fh)
+    pp.pprint(primer3_config.thermo_filters)
 
 def _make_point_char_inserts(points, mark_char):
     # primer3 point 0-based index position before junction

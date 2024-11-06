@@ -66,15 +66,39 @@ seq_args:
     'SEQUENCE_TEMPLATE': 'CGCAAGCCCCACGCCACGCGTCGCTGGTCCCAGGCAGCGAGTCGCTCGCGCGCCCCGCCGCCCGCCTGGCGACAGCTCCGCCGCGCACGCACATGGAGGGGAGCGCGAGCCCCCCGGAAAAGCCCCGCGCCCGCCCTGCGGCTGCCGTGCTGTGCCGGGGCCCGGTAGAGCCGCTGGTCTTCCTGGCCAACTTTGCCTTGGTCCTGCAGGGCCCGCTCACCACGCAGTATCTGTGGCACCGCTTCAGCGCCGACCTCGGCTACAATGGCACCCGCCAAAGGGGGGGCTGCAGCAACCGCAGCGCGGACCCCACCATGCAGGAAGTGGAGACCCTTACCTCCCACTGGACCCTCTACATGAACGTGGGCGGCTTCCTGGTGGGGCTCTTCTCGTCCACCCTGCTGGGAGCTTGGAGCGACAGTGTGGGCCGCCGCCCGCTGCTAGTGCTGGCCTCGCTGGGCCTGCTGCTCCAGGCCCTAGTGTCCGTTTTTGTGGTGCAGCTGCAGCTCCACGTCGGCTACTTCGTGCTGGGTCGCATCCTTTGTGCCCTCCTCGGCGACTTCGGTGGCCTTCTGGCTGCTAGCTTTGCGTCCGTGGCAGATGTCAGCTCCAGTCGCAGCCGCACCTTCCGGATGGCCCTGCTGGAAGCCAGCATCGGGGTGGCTGGGATGCTGGCAAGCCTCCTCGGGGGCCACTGGCTCCGGGCCCAGGGTTATGCCAACCCCTTCTGGCTGGCCTTGGCCTTGCTGATAGCCATGACTCTCTATGCAGCTTTCTGCTTTGGTGAGACCTTAAAGGAGCCAAAGTCCACCCGGCTCTTCACGTTCCGTCACCACCGATCCATTGTCCAGCTCTATGTGGCTCCCGCCCCAGAGAAGTCCAGGAAACATTTAGCCCTCTACTCACTGGCCATCTTCGTGGTGATCACTGTGCACTTTGGGGCCCAGGACATCTTAACCCTTTATGAACTAAGCACACCCCTCTGCTGGGACTCCAAACTAATCGGCTATGGTTCTGCAGCTCAGCATCTCCCCTACCTCACCAGCCTGCTGGCCCTGAAGCTCCTGCAGTACTGCCTGGCCGATGCCTGGGTAGCTGAGATCGGCCTGGCCTTCAACATCCTGGGGATGGTGGTCTTTGCCTTTGCCACTATCACGCCTCTCATGTTCACAGGATATGGGTTGCTTTTCCTGTCATTAGTCATCACACCTGTCATCCGGGCTAAACTCTCCAAGCTGGTGAGAGAGACAGAGCAGGGTGCTCTCTTTTCTGCTGTGGCCTGTGTGAATAGCCTGGCCATGCTGACGGCCTCCGGCATCTTCAACTCACTCTACCCAGCCACTCTGAACTTTATGAAGGGGTTCCCCTTCCTCCTGGGAGCTGGCCTCCTGCTCATCCCGGCTGTTCTGATTGGGATGCTGGAAAAGGCTGATCCTCACCTCGAGTTCCAGCAGTTTCCCCAGAGCCCCTGATCTGCCTGGACCAGAAGACAGAGGGCAAGAGGAGCAAAGTGAACACCAAGCAACTGGAGGTCTGCAGCTGGAAGCCCAGCCCACAGCAGGACAAGCAACTCTTGTCTAAGGGCAGTGCTCTCTTTGGACGAGGTAGTCAAGAGAGACCAAGGCACCACCCCATCCACAGCTGACCCAGCCTCTGTCTAGGATCTAGAATCATAACCCACACAGGCCCACTGCAGGACAGGTGGCAGAGGAGCTATTTGGGACAGGAGTCAGTTCTCCCTTTCTGCTATCCATCACTTATAACCCCACAGGCCAGAGGAGAGGTCCTGAGAGAGGTGACACTTCAGGGACCAGAGGCAGCACGAGGGCTGGCATCTCTCCTTCCAGCCCAAACTGCACAGCCCCAACCAGGTTCCCAACACGTGTAGCAGTCATCAGCCATTCCTTAACAATGAATGTGGTACCTGGTTAGTGCCAGCCTTGGGAAGGAGGGAGGGAGGTAAGAGGGGCTTGGTGATCTCTGGAGGAAGAGTGTTGCCTTTGCTGTGGTTGGGGAATCGATCCTTGGCTATGGCCTACCCACTCCCCTGGCTGAAGAGTGCCAATCATTACAAATCAGCTTCAGCAAACTGAAACAAACCTTCTGGTGCCTTGGGCTTTGGGGCCCTCTGTTTTCCTGCTCCCAGTCTGCCTGCCATACGTTAGACAACAGAAGCTGCTGGGCTGGGCAGGAGCCCTGAGCTGCCTGGTGGATTGGTACCAAGTGGGGCCAGCCAGGGCTTCTACTGACTCGCTGTGCAACCTTGAGCAAGCCCCACTAGGAACGGCTAGATCAGCAATGCCCCAAATTGTTGAATCGTGGTGATCACATTTGGATGGACAAGTTAGGAAACTTAGCTGATTCTCTGAGATACTTCCCACTTCCTCATACATTCTACAATGAGATGCCTCTCTTCATGGGCCTGGGGAAAGGATGAATGAGTGTGGCTGGACTTTTGACCTTTAATGTCCCTGAGCAGTTCTTGGCCCTTGGGGAGAAGTAGGGGGAGGATCTGGCTGACTCAGCCCCAACCGAGGGGTAGCAGCTGCAGCCCAGCCAAGCAGAACACCCTGGCCCTACAGACCTGTGTCTGAGCAGGCTTTGGAGGAAAGGCCACTTCTGAGTCCTCTGTCTCAGGAGAAGCCAGGCCTAGGTGCTTGACCTGGTGATCTGAGCTGTGTTTGTCCTAGTATGGGTGGCAGTCACCTCTGAACACACTGGCCTTGGCTTAGAGGAGGCTTGTGACTTCAGCTGTTCCAGCTGGGGCTGGATGCTGGACTCTGATTCCCTCAGAGAGACAGAAGATCGGGCAGAGGTCAACCAGAAGGCCACACAGGGCAGTGGACAACAGTGGAGGGTATACCAAATAGAAATAAAACGCAGGAAACCTCTCTGAATACTGCCCTTGGGGACCTCAGGAGGGAGTGGGACTGATTGGAGACAAAGAGCCAGAAATCATCCCCTGGAGATACTCAGACACTGTATTGTTATTGGCGCTGTCCTGTGAGGGCAGTGTCCAGGCTGCCCTGCTTGTCATATCCATGCCCTGGCTCTGGCCCCGGTGAGCACTTGTGCTGCATGAGGAAAGGAGGATCAGGTGGGGTCAAAACCAAAGCATCGAGGCTGGCACTGGCCAAGACAGACTCTGGCAGGGAGGGGAGTGGAAGGAAGGAGCCCCAAACCTGGAGTGAGACCTTTGACTTTCTGATGATGTGGCCAAGAACTAGGAGTCACCTGGCCAGCACAGCCAAGAGTGGGGCTGGGGGCGCAGCCAGCTTTAAGGTGTCAACACCTGGCCCTTGCGGGGAAAGAGCCTTCAGCAGCCCCCACGGCCTGGAGCCTGGGTTTATTGGAGGGTGCTTTCTTACCCTCTGAACCCAGTGGAGGAGGGGGCAATGGGATATTCCTGCTCTGTATGGCCTCTGGGTCAGCTTTTTGTTGCAAAATCCTATCCCCCGCTGCTAGATTCTTTGAAGCAAGGGAGAAGCAATAGCCCAGCCTCAGAATGATTCTCAGGAAAGCAATTCCACTGCCAGTGGACTGGGTGCCAGGAGGCCTAGGTCTGGATCTGGGGCTGCCACTAATGACAGGAAAGTGGGCTTATCCTCAACCTTTCTGAGCCTCAGTGTCATTATCTGTAAAATGGGGATGATAATACCAGGTAGAGTTGCTCTGATGACTGGAGACCATGGAGCGGAGTGTTTGGGAAATGGCAAAGATTTGTGAGGGCTTCGTGCTTTAGAGATTTGCTACCCTTAACCACCAGCATCAGCTCACCTGGGAATCTGTAAGAAATGCAGAGTCCTAGGCCCCACCCCAGATCTCCTGATTTTAACAACATTCCCAGGTGACTTGGATGCATGTTAAAGTTGGAGAAGCTGCCCTAAGTGACAACCCTTTGCCTTTTCAGGACTTTGCCTCTTTCCACAGAGCTGCAGGTTCTGTCTAGGCTGCTTTTACTGCCATGGGGGCTGCCTGGTCCCTGAGTAAGCAGTGGGTAGCCCTGGATGGCTGAGGGGCTGGGGAAGCCAGCTGGGCCAGACCAGGAAGGAGCCTGAGGCACAGCACCAAGGCATGGGGTAGGGTGGGCTTTGAGGCACGGCCTCCCCATGCCCAGACCCAGGCCCAAACAGGAGGCTCCTGTGCACCAGCAAGTGCAGCAAAGCTGGCTGCAGTGACAAGGAAGTCAGAGGGAGGGCTGGTTTGCCTCAACCCTCGCCCTGGATGTGGCAAAAGATACCACACCGAAGGAAGCTGTAGGGGATCTGGGACTTAGTCAGGCTAGCTAAGGGCACTGAGTGATTACAGGGCAAGGCCACAGAGCGGCAGGAAGTTGTAAGTGCAGGGGCCAGGCACAGTCTGAGTGGAGAGCCATGATGGCACTCATCCCTGGCTGGCTCCTGGGCCCAGGCCCTTGC',
     'SEQUENCE_PRIMER_PAIR_OK_REGION_LIST': [[471, 656, 1486, 939]]}
 thermo_args:
-None
+Primer3ThermoArgs(mv_conc=50.0,
+                  dv_conc=1.5,
+                  dntp_conc=0.6,
+                  dna_conc=50.0,
+                  temp_c=37.0,
+                  max_loop=30,
+                  output_structure=False,
+                  salt_corrections_method='santalucia',
+                  salt_corrections_method_int=1,
+                  max_nn_length=60,
+                  tm_method='santalucia',
+                  tm_method_int=1,
+                  temp_only=0,
+                  dmso_conc=0.0,
+                  dmso_fact=0.6,
+                  formamide_conc=0.8,
+                  annealing_temp_c=-10.0)
 thermo_filters:
-None
+DefaultThermoFitlers(tm_range=(55.0, 70.0),
+                     hairpin_min_dg=-3.0,
+                     homodimer_min_dg=-3.0,
+                     heterodimer_min_dg=-5.0,
+                     end_stability_min_dg=-10.0)
 
 >>> Primer3Results: 5 results <<<
 Primer3Pair 0:
 {   'result_num': 0,
-    'passed': True,
-    'thermo_results': None,
+    'passed': False,
+    'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.864141554695905)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=False, val=-431.3492289246824)),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
+                                           heterodimer=ThermoEval(passed=False, val=-2200.1512289277853),
+                                           end_stability=ThermoEval(passed=True, val=1722.9299999999996)),
     'PRIMER_PAIR_PENALTY': 0.06276360860414343,
     'PRIMER_LEFT_PENALTY': 0.03158519466222742,
     'PRIMER_RIGHT_PENALTY': 0.031178413941916006,
@@ -100,8 +124,12 @@ Primer3Pair 0:
     'PRIMER_PAIR_PRODUCT_TM': 90.72327790495876}
 Primer3Pair 1:
 {   'result_num': 1,
-    'passed': True,
-    'thermo_results': None,
+    'passed': False,
+    'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.8623676251748)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=True, val=0.0)),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-9405.828602451082)),
+                                           heterodimer=ThermoEval(passed=False, val=-4959.379915689431),
+                                           end_stability=ThermoEval(passed=False, val=-2269.6374578462637)),
     'PRIMER_PAIR_PENALTY': 0.06453753812525065,
     'PRIMER_LEFT_PENALTY': 0.03158519466222742,
     'PRIMER_RIGHT_PENALTY': 0.032952343463023226,
@@ -127,8 +155,12 @@ Primer3Pair 1:
     'PRIMER_PAIR_PRODUCT_TM': 90.79897643471328}
 Primer3Pair 2:
 {   'result_num': 2,
-    'passed': True,
-    'thermo_results': None,
+    'passed': False,
+    'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.94645064912533)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=True, val=40.60604215373678)),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-3229.2040603004425)),
+                                           heterodimer=ThermoEval(passed=False, val=-2859.312457849366),
+                                           end_stability=ThermoEval(passed=False, val=-2337.6874578462666)),
     'PRIMER_PAIR_PENALTY': 0.0645958748797284,
     'PRIMER_LEFT_PENALTY': 0.03158519466222742,
     'PRIMER_RIGHT_PENALTY': 0.033010680217500976,
@@ -154,8 +186,12 @@ Primer3Pair 2:
     'PRIMER_PAIR_PRODUCT_TM': 90.62101541325497}
 Primer3Pair 3:
 {   'result_num': 3,
-    'passed': True,
-    'thermo_results': None,
+    'passed': False,
+    'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.911580164679236), rev=ThermoEval(passed=True, val=57.864141554695905)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-548.6789578431635), rev=ThermoEval(passed=False, val=-431.3492289246824)),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-6151.056144614115), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
+                                           heterodimer=ThermoEval(passed=False, val=-2859.117457846267),
+                                           end_stability=ThermoEval(passed=False, val=-1145.9474578462614)),
     'PRIMER_PAIR_PENALTY': 0.06555861025333343,
     'PRIMER_LEFT_PENALTY': 0.03438019631141742,
     'PRIMER_RIGHT_PENALTY': 0.031178413941916006,
@@ -181,8 +217,12 @@ Primer3Pair 3:
     'PRIMER_PAIR_PRODUCT_TM': 90.79712114714373}
 Primer3Pair 4:
 {   'result_num': 4,
-    'passed': True,
-    'thermo_results': None,
+    'passed': False,
+    'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.93085432845051), rev=ThermoEval(passed=True, val=57.864141554695905)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=0.0), rev=ThermoEval(passed=False, val=-431.3492289246824)),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-2754.6612289277873), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
+                                           heterodimer=ThermoEval(passed=False, val=-2241.1449156925228),
+                                           end_stability=ThermoEval(passed=True, val=1722.9299999999996)),
     'PRIMER_PAIR_PENALTY': 0.0667127737546025,
     'PRIMER_LEFT_PENALTY': 0.03553435981268649,
     'PRIMER_RIGHT_PENALTY': 0.031178413941916006,
@@ -214,7 +254,7 @@ Primer3Pair 4:
     ppair_id SLC46A1+1_pp3
     features_5p [ExonFeature(genome=Coords(name='chr17', start=28404953, end=28404973, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=3583, end=3603, strand='-', size=4418))]
     features_3p [ExonFeature(genome=Coords(name='chr17', start=28399464, end=28399484, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=2755, end=2775, strand='-', size=4418))]
-    passed True
+    passed False
     priority 1
     amplicon_coords FSM_44519:815-1663
     amplicon_length 848
@@ -230,12 +270,16 @@ Primer3Pair 4:
     transcriptome_off_targets None
     transcriptome_non_targets None
     thermo_results
-None
+Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.94645064912533)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=True, val=40.60604215373678)),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-3229.2040603004425)),
+                     heterodimer=ThermoEval(passed=False, val=-2859.312457849366),
+                     end_stability=ThermoEval(passed=False, val=-2337.6874578462666))
 >>> PrimerDesign <<<
     ppair_id SLC46A1+1_pp2
     features_5p [ExonFeature(genome=Coords(name='chr17', start=28404953, end=28404973, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=3583, end=3603, strand='-', size=4418))]
     features_3p [ExonFeature(genome=Coords(name='chr17', start=28399234, end=28399254, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=2525, end=2545, strand='-', size=4418))]
-    passed True
+    passed False
     priority 2
     amplicon_coords FSM_44519:815-1893
     amplicon_length 1078
@@ -251,12 +295,16 @@ None
     transcriptome_off_targets None
     transcriptome_non_targets None
     thermo_results
-None
+Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.8623676251748)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=True, val=0.0)),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-9405.828602451082)),
+                     heterodimer=ThermoEval(passed=False, val=-4959.379915689431),
+                     end_stability=ThermoEval(passed=False, val=-2269.6374578462637))
 >>> PrimerDesign <<<
     ppair_id SLC46A1+1_pp1
     features_5p [ExonFeature(genome=Coords(name='chr17', start=28404953, end=28404973, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=3583, end=3603, strand='-', size=4418))]
     features_3p [ExonFeature(genome=Coords(name='chr17', start=28399118, end=28399138, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=2409, end=2429, strand='-', size=4418))]
-    passed True
+    passed False
     priority 3
     amplicon_coords FSM_44519:815-2009
     amplicon_length 1194
@@ -272,12 +320,16 @@ None
     transcriptome_off_targets None
     transcriptome_non_targets None
     thermo_results
-None
+Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.864141554695905)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=False, val=-431.3492289246824)),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
+                     heterodimer=ThermoEval(passed=False, val=-2200.1512289277853),
+                     end_stability=ThermoEval(passed=True, val=1722.9299999999996))
 >>> PrimerDesign <<<
     ppair_id SLC46A1+1_pp5
     features_5p [ExonFeature(genome=Coords(name='chr17', start=28404938, end=28404958, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=3568, end=3588, strand='-', size=4418))]
     features_3p [ExonFeature(genome=Coords(name='chr17', start=28399118, end=28399138, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=2409, end=2429, strand='-', size=4418))]
-    passed True
+    passed False
     priority 4
     amplicon_coords FSM_44519:830-2009
     amplicon_length 1179
@@ -293,12 +345,16 @@ None
     transcriptome_off_targets None
     transcriptome_non_targets None
     thermo_results
-None
+Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.93085432845051), rev=ThermoEval(passed=True, val=57.864141554695905)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=0.0), rev=ThermoEval(passed=False, val=-431.3492289246824)),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-2754.6612289277873), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
+                     heterodimer=ThermoEval(passed=False, val=-2241.1449156925228),
+                     end_stability=ThermoEval(passed=True, val=1722.9299999999996))
 >>> PrimerDesign <<<
     ppair_id SLC46A1+1_pp4
     features_5p [ExonFeature(genome=Coords(name='chr17', start=28404760, end=28404780, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=3390, end=3410, strand='-', size=4418))]
     features_3p [ExonFeature(genome=Coords(name='chr17', start=28399118, end=28399138, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=2409, end=2429, strand='-', size=4418))]
-    passed True
+    passed False
     priority 5
     amplicon_coords FSM_44519:1008-2009
     amplicon_length 1001
@@ -314,5 +370,9 @@ None
     transcriptome_off_targets None
     transcriptome_non_targets None
     thermo_results
-None
+Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.911580164679236), rev=ThermoEval(passed=True, val=57.864141554695905)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-548.6789578431635), rev=ThermoEval(passed=False, val=-431.3492289246824)),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-6151.056144614115), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
+                     heterodimer=ThermoEval(passed=False, val=-2859.117457846267),
+                     end_stability=ThermoEval(passed=False, val=-1145.9474578462614))
 

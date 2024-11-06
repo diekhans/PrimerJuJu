@@ -1,7 +1,15 @@
 * is genome_data srcUrl really needed?
 
+* add mispriming_check(putative_seq, sequences, tm_threshold)
+
+
 * not sure if PRIMER_MIN_3_PRIME_OVERLAP_OF_JUNCTION works
-don't build match_str to include is
+
+* look at this for addition pp analysis:
+https://libnano.github.io/primer3-py/api/thermoanalysis.html
+
+* : dict() is a hack around primer3 give type error on ObjDict
+
 
 * repeat filtering
 This is suggestion from ThermoFisher regaridng Primer design: Try to avoid
@@ -12,6 +20,8 @@ for now set PRIMER_MAX_POLY_X, PRIMER_INTERNAL_MAX_POLY_X (int; default 5)
 Equivalent parameter of PRIMER_MAX_POLY_X for the internal oligo.
 
 * type check Primer3Config variables
+check for ones that can't be specified without breaking JuJU
+also, don't have to specify None fields in the Primer3Config.__init__
 
 * primer3 upgrade issues 2024-03-19
 ** debug option got from design_primers
@@ -122,3 +132,61 @@ make make a test data repo
 ** step by step on running it
 
     
+* add Thermodynamic analysis from primer3_py (via Monkia)
+
+** mv_conc (Union[float, int]) – Monovalent cation concentration (mM)
+The standard concentration of monovalent cations, typically potassium (K⁺) or
+sodium (Na⁺), in a PCR reaction is generally set to 50 mM, often provided as
+50 mM K+ or 50 mM Na+. This concentration is consistent with specifications
+provided by tools like the IDT OligoAnalyzer and the LA Taq Polymerase
+specification sheet, where a 50 mM concentration of monovalent cations is
+standard for optimal enzyme function and primer annealing.
+
+** dv_conc (Union[float, int]) – Divalent cation concentration (mM)
+The standard concentration of divalent cations, typically magnesium ions (Mg²⁺), in a PCR reaction generally ranges from 1.5–2.5 mM (often provided as MgCl₂). According to the IDT OligoAnalyzer tool, this concentration is 3 mM, whereas the LA Taq Polymerase specification sheet recommends 2 mM. To evaluate the bioinformatics tool, we can set dv_conc to 2.5 mM as a balanced concentration for divalent cations.
+Balancing the concentrations of both monovalent and divalent cations is important for efficient PCR, as too much or too little can affect enzyme activity and specificity. (edited) 
+
+** dntp_conc (Union[float, int])* – dNTP concentration (mM)
+This concentration provides an adequate supply of nucleotides for DNA
+synthesis without causing excessive background or non-specific amplification.
+The standard concentration of dNTPs (deoxynucleotide triphosphates) in a PCR
+reaction is typically set to 200 µM of each dNTP (dATP, dCTP, dGTP, and
+dTTP). This concentration is also recommended in the LA Taq Polymerase
+specification sheet, making it a reliable choice. (edited)
+
+** dmso_conc (float) – Concentration of DMSO (%)
+The standard concentration of DMSO (dimethyl sulfoxide) in a PCR reaction
+typically ranges from 1–10% (v/v). For most applications, a concentration of
+5% DMSO is commonly used as a starting point. DMSO helps stabilize DNA
+melting, particularly in GC-rich or structurally complex templates, by
+reducing secondary structures that can hinder primer binding and DNA
+polymerase activity.
+According to information from Takara, which provides DNA
+polymerases, customers have reported improved amplification of GC-rich
+templates by adding DMSO to reactions using PrimeSTAR MAX DNA Polymerase or
+CloneAmp HiFi PCR Premix. The recommended concentration of DMSO for these
+applications is between 2.5% and 5%.  However, I usually do not add DMSO to my
+PCR reactions.
+
+
+** temp_c (Union[float, int]) – Simulation temperature for dG (Celsius)
+This is what I found:
+When evaluating Gibbs free energy change (ΔG) for primer dimers in PCR, the simulation temperature typically used is:
+
+37°C
+This temperature reflects physiological conditions and is commonly applied when assessing the stability of DNA interactions, including primer-dimer formation.
+However, depending on the context of your study or the specific conditions of your PCR, you may also consider temperatures around:
+
+25°C (room temperature) for some theoretical calculations
+
+60°C or higher for evaluating dimer stability under denaturing conditions typical of the PCR process.
+For most practical applications involving PCR, 37°C is the standard temperature used for calculating ΔG values related to primer dimers.
+
+I propose that we test temperatures of
+37°C and 50-60°C, as these temperatures are close to the annealing temperature typically used during standard PCR reactions.
+
+** annealing_temp_c (float) – Actual annealing temperature of the PCR reaction (°C)
+The actual annealing temperature in a PCR reaction is a critical parameter that influences the specificity and efficiency of primer binding to the DNA template. It is typically set based on the melting temperature (Tm) of the primers used, generally ranging from 50°C to 68°C. Optimizing the annealing temperature can help minimize non-specific amplification and improve the overall yield of the desired PCR product.
+
+As previously mentioned, it is challenging to establish a strict annealing temperature, as it can vary for each primer.
+

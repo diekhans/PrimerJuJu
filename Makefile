@@ -103,3 +103,6 @@ test-release:
 	${envact} && cd ${dev_venv} && ${PIP} install --no-cache-dir ${pkgver_spec}
 	${envact} && cd tests && ${MAKE} test
 
+
+savebak:
+	savebak -git PrimerS-JuJu

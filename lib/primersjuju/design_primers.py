@@ -2,6 +2,7 @@
 Primer selection for a target.
 """
 import sys
+import pprint
 from typing import Sequence
 from dataclasses import dataclass
 from pycbio.sys.symEnum import SymEnum
@@ -17,7 +18,8 @@ class DesignStatus(SymEnum):
     GOOD = 0
     NOT_GENOME_UNIQUE = 1
     NOT_TRANSCRIPTOME_UNIQUE = 2
-    NO_PRIMERS = 3
+    FAILED = 4
+    NO_PRIMERS = 5
 
 @dataclass
 class PrimerDesign:
@@ -51,6 +53,7 @@ class PrimerDesign:
         print("    ppair_id", self.ppair_id, file=fh)
         print("    features_5p", self.features_5p, file=fh)
         print("    features_3p", self.features_3p, file=fh)
+        print("    passed", self.primer3_pair.passed, file=fh)
         print("    priority", self.priority, file=fh)
         print("    amplicon_coords", self.amplicon_coords, file=fh)
         print("    amplicon_length", self.amplicon_length, file=fh)
@@ -65,7 +68,9 @@ class PrimerDesign:
         print("    transcriptome_on_targets", _lfmt(self.uniqueness.transcriptome_on_targets), file=fh)
         print("    transcriptome_off_targets", _lfmt(self.uniqueness.transcriptome_off_targets), file=fh)
         print("    transcriptome_non_targets", _lfmt(self.uniqueness.transcriptome_non_targets), file=fh)
-
+        print("    thermo_results", file=fh)
+        pp = pprint.PrettyPrinter(stream=fh, sort_dicts=False, indent=8)
+        pp.pprint(self.primer3_pair.thermo_results)
 
 @dataclass
 class PrimerDesigns:
@@ -127,6 +132,8 @@ def _build_primer_design(target_transcript, target_id, result_num, primer3_pair,
     return PrimerDesign(ppair_id, primer3_pair, features_5p, features_3p, amplicon_coords, uniqueness)
 
 def _calc_design_status(primer_design) -> DesignStatus:
+    if not primer_design.primer3_pair.passed:
+        return DesignStatus.FAILED
     if primer_design.uniqueness.transcriptome_off_target_cnt > 0:
         return DesignStatus.NOT_TRANSCRIPTOME_UNIQUE
     elif primer_design.uniqueness.genome_off_target_cnt > 0:
