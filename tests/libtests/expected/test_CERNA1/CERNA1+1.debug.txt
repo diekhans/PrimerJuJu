@@ -44,6 +44,10 @@ seq_args:
     'SEQUENCE_TEMPLATE': 'TGACGCCAGCAGCTGCGGGCCCGGCTGCTGCGCCTGAGCCCCAAGACCCCGCACCTGGGCGCGCGCTCTGGCGCAGTGCCTGGTGCGATGTCCGCGTCAGCCTCTCTCCTCCGGGAGAGGCAGGGAGTGTGACGCCCATTTTACCAGCGGGCAAACTGTGGCTTAGGGATGCTGGGTGATTTGCCCGAGGACGCACACAGAGGGAAGGGCCAAGCCGGGATTCCAACTCGGGACTCCCCGCTTCTGGGGAGACCGGTGAGGCCCCCGCGACATGGCCCTCCCATCCCCAAGCCTCTCGTGCAGATCTCCGCTCTGTGGGACTTGATTGCGGGCTGCGGGCCCGTGGCTCCTGCAGGCAGAGAGAGGACGGGAGAGGAGACGGCTACGAGGCTTGGCCGCAGAGAATGAGAAGGCAGATCAAAGTTACAGATGCTGCGAGAACATCGCCAAGCAGAATCTTGGGTGCTGTCCCCACCTCTCTGTACCTGCTCCCTCCCAGAGAAGCCAGCCTCCACTTGCTGTCCCGGGCCTTCTCTATCTGAGAAAAGTTGAAGGAGCACATGTCCTTGCGCAGGAAGAGGCTGTTCAGCGTGACCGCCCCGATCAAGAAGAAGAGCTGCTTCACCGCCTGCCTCACAAGCTCGGGGTCCAGGCCGTTCTGGCACATGGTGGTGTAAAAGTAGCTCAGCTGTTGCAGGACGGAGGTCATGGTGTAGCCGTCCGTGTCGTCTATGCTAGAGGAGCGCTTCCGGAAGCCTGTGGGCTTCAGGCCGGAAATGCCCTGCAGGCTCTCATACTCCAGCATTCCCGGAACTGCGGAGAGACAGGGAGGCTGTGCTGACACGCCAGGAGACACACGCGGAACGTTCCCGACGCTCTTCGGTTTGTTTCAGGAGATGGGACATTTTTCTACAAGAGTCAGTGGATGTACTTATGATAGAGAAAGCAAAAGAATCAAGGGTTTGGGACACCAGGGTGTGTGTCAGGGTTAGGGATGGACGGCTGTTTCCAGCGGGGCTGCAGCTCCTCTTGTAGGTTTGAAGCAGCACGTTTTTCAGCTTCACAGGAAAGAAAGCTGCTTAGCATGACAAATCATGGCCTGGGCATTAAAGCCTAAAGTATTTAAATTTCAGGAAATTAAGGAAAGTATACAAGAATTCGAATGGGGCTTTAGGATTTCAAAAATACTTGGCTACGCCAAGAAGTAGAAGTACCACATAAATAGCAGTAGTAGAAGTTTCCCCAAGTTTTTTCCTTCAGGATAAATCATCCTTATATAAAGAAAACTACCAACAGCGTACTATTATTTATGGAATCATTATAAGCAAGCAAAGAATTAAAAGGCAGATATCTACATGATTATATTTCCTTGGCTTTTTAAACAATGTTACACATAATCACACATTACACATACCAAGTTTATGTTTTAAAAAGTCTTAATGTTACTATAAATATTTTTTGGTCATCCATTCTCTTCTTACCTATTATCGGTTGGATATTCTTTTCCATTATGATAATAAATTGATGATATATTCGTATAGCCACATCACTGAGAATCTGTCTGTATTCTGAAAGGTCAAAATTGTTCAAGCAATTCTTATTCTGCTGTGGACTATTATGCTTCATGAATTCCTAAAAGTAATTTTAAACATAAAATATTAGAATAATACAAACATGTAGGAAATTAATAATCAGCTACTATAACTCTTTTACCTTAAAACTTAATGTCTGATTTATATCAAATGAGTTCATGATGCTTGGGGTAGCATGTACCTTCTATAAGAAAAAAATTGCACTGATTTCCTGTATGATCACAGTCTATCACACTGTCATTGTCCCACCCACTTCCCTACAAACATTGTCCCTGGAACCTATAGACTAAATGGAAAAGCTCGTAGAAGGCCCATGGAAGCGCATAGGAAAATGAAACAAAACTGCAGAGCATTC',
     'SEQUENCE_PRIMER_PAIR_OK_REGION_LIST': [[131, 413, 803, 558]],
     'SEQUENCE_OVERLAP_JUNCTION_LIST': (402,)}
+thermo_args:
+None
+thermo_filters:
+None
 
 >>> Primer3Results: 5 results <<<
 Primer3Pair 0:
@@ -190,6 +194,7 @@ Primer3Pair 4:
     features_5p [ExonFeature(genome=Coords(name='chr15', start=52180395, end=52180401, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=395, end=401, strand='+', size=1947))
  ExonFeature(genome=Coords(name='chr15', start=52181049, end=52181063, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=401, end=415, strand='+', size=1947))]
     features_3p [ExonFeature(genome=Coords(name='chr15', start=52205307, end=52205327, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=973, end=993, strand='+', size=1947))]
+    passed True
     priority 1
     amplicon_coords FSM_12039:395-993
     amplicon_length 598
@@ -219,11 +224,14 @@ Primer3Pair 4:
     ]
     transcriptome_non_targets [
     ]
+    thermo_results
+None
 >>> PrimerDesign <<<
     ppair_id CERNA1+1_pp2
     features_5p [ExonFeature(genome=Coords(name='chr15', start=52180395, end=52180401, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=395, end=401, strand='+', size=1947))
  ExonFeature(genome=Coords(name='chr15', start=52181049, end=52181063, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=401, end=415, strand='+', size=1947))]
     features_3p [ExonFeature(genome=Coords(name='chr15', start=52205308, end=52205328, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=974, end=994, strand='+', size=1947))]
+    passed True
     priority 2
     amplicon_coords FSM_12039:395-994
     amplicon_length 599
@@ -253,11 +261,14 @@ Primer3Pair 4:
     ]
     transcriptome_non_targets [
     ]
+    thermo_results
+None
 >>> PrimerDesign <<<
     ppair_id CERNA1+1_pp5
     features_5p [ExonFeature(genome=Coords(name='chr15', start=52180395, end=52180401, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=395, end=401, strand='+', size=1947))
  ExonFeature(genome=Coords(name='chr15', start=52181049, end=52181063, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=401, end=415, strand='+', size=1947))]
     features_3p [ExonFeature(genome=Coords(name='chr15', start=52205427, end=52205447, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=1093, end=1113, strand='+', size=1947))]
+    passed True
     priority 3
     amplicon_coords FSM_12039:395-1113
     amplicon_length 718
@@ -287,11 +298,14 @@ Primer3Pair 4:
     ]
     transcriptome_non_targets [
     ]
+    thermo_results
+None
 >>> PrimerDesign <<<
     ppair_id CERNA1+1_pp3
     features_5p [ExonFeature(genome=Coords(name='chr15', start=52180392, end=52180401, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=392, end=401, strand='+', size=1947))
  ExonFeature(genome=Coords(name='chr15', start=52181049, end=52181060, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=401, end=412, strand='+', size=1947))]
     features_3p [ExonFeature(genome=Coords(name='chr15', start=52205307, end=52205327, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=973, end=993, strand='+', size=1947))]
+    passed True
     priority 4
     amplicon_coords FSM_12039:392-993
     amplicon_length 601
@@ -315,11 +329,14 @@ Primer3Pair 4:
     ]
     transcriptome_non_targets [
     ]
+    thermo_results
+None
 >>> PrimerDesign <<<
     ppair_id CERNA1+1_pp4
     features_5p [ExonFeature(genome=Coords(name='chr15', start=52180392, end=52180401, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=392, end=401, strand='+', size=1947))
  ExonFeature(genome=Coords(name='chr15', start=52181049, end=52181060, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=401, end=412, strand='+', size=1947))]
     features_3p [ExonFeature(genome=Coords(name='chr15', start=52205308, end=52205328, strand='+', size=101991189), trans=Coords(name='FSM_12039', start=974, end=994, strand='+', size=1947))]
+    passed True
     priority 5
     amplicon_coords FSM_12039:392-994
     amplicon_length 602
@@ -343,4 +360,6 @@ Primer3Pair 4:
     ]
     transcriptome_non_targets [
     ]
+    thermo_results
+None
 

@@ -51,13 +51,14 @@ class Primer3ThermoFitlers:
     end_stability_min_dg: Optional[float] = None
 
 class DefaultThermoFitlers(Primer3ThermoFitlers):
-    """A default set of Primer3ThermoFitlers"""
+    """A default set of Primer3ThermoFitlers.   Note delta-G is in
+    cal/mol, not kcal! """
     def __init__(self):
         super().__init__(tm_range=(55.0, 70.0),
-                         hairpin_min_dg=-3.0,
-                         homodimer_min_dg=-3.0,
-                         heterodimer_min_dg=-5.0,
-                         end_stability_min_dg=-10.0)
+                         hairpin_min_dg=-3.0 * 1000,
+                         homodimer_min_dg=-3.0 * 1000,
+                         heterodimer_min_dg=-5.0 * 1000,
+                         end_stability_min_dg=-10.0 * 1000)
 
 
 class Primer3Config:

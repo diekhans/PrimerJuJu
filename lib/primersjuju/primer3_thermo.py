@@ -97,7 +97,6 @@ def eval_homodimer(primer3_pair, args, filters):
     return ThermoEvalPair(eval_homodimer1(primer3_pair.PRIMER_LEFT_SEQUENCE, args, filters),
                           eval_homodimer1(primer3_pair.PRIMER_RIGHT_SEQUENCE, args, filters))
 
-
 def eval_heterodimer(primer3_pair, args, filters):
     tr = primer3.calc_heterodimer(primer3_pair.PRIMER_LEFT_SEQUENCE,
                                   primer3_pair.PRIMER_RIGHT_SEQUENCE,

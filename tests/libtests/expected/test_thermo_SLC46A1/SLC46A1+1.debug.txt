@@ -85,19 +85,19 @@ Primer3ThermoArgs(mv_conc=50.0,
                   annealing_temp_c=-10.0)
 thermo_filters:
 DefaultThermoFitlers(tm_range=(55.0, 70.0),
-                     hairpin_min_dg=-3.0,
-                     homodimer_min_dg=-3.0,
-                     heterodimer_min_dg=-5.0,
-                     end_stability_min_dg=-10.0)
+                     hairpin_min_dg=-3000.0,
+                     homodimer_min_dg=-3000.0,
+                     heterodimer_min_dg=-5000.0,
+                     end_stability_min_dg=-10000.0)
 
 >>> Primer3Results: 5 results <<<
 Primer3Pair 0:
 {   'result_num': 0,
     'passed': False,
     'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.864141554695905)),
-                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=False, val=-431.3492289246824)),
-                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
-                                           heterodimer=ThermoEval(passed=False, val=-2200.1512289277853),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=-68.6904578462636), rev=ThermoEval(passed=True, val=-431.3492289246824)),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=True, val=-2820.0812289277856)),
+                                           heterodimer=ThermoEval(passed=True, val=-2200.1512289277853),
                                            end_stability=ThermoEval(passed=True, val=1722.9299999999996)),
     'PRIMER_PAIR_PENALTY': 0.06276360860414343,
     'PRIMER_LEFT_PENALTY': 0.03158519466222742,
@@ -126,10 +126,10 @@ Primer3Pair 1:
 {   'result_num': 1,
     'passed': False,
     'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.8623676251748)),
-                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=True, val=0.0)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=-68.6904578462636), rev=ThermoEval(passed=True, val=0.0)),
                                            homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-9405.828602451082)),
-                                           heterodimer=ThermoEval(passed=False, val=-4959.379915689431),
-                                           end_stability=ThermoEval(passed=False, val=-2269.6374578462637)),
+                                           heterodimer=ThermoEval(passed=True, val=-4959.379915689431),
+                                           end_stability=ThermoEval(passed=True, val=-2269.6374578462637)),
     'PRIMER_PAIR_PENALTY': 0.06453753812525065,
     'PRIMER_LEFT_PENALTY': 0.03158519466222742,
     'PRIMER_RIGHT_PENALTY': 0.032952343463023226,
@@ -157,10 +157,10 @@ Primer3Pair 2:
 {   'result_num': 2,
     'passed': False,
     'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.94645064912533)),
-                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=True, val=40.60604215373678)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=-68.6904578462636), rev=ThermoEval(passed=True, val=40.60604215373678)),
                                            homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-3229.2040603004425)),
-                                           heterodimer=ThermoEval(passed=False, val=-2859.312457849366),
-                                           end_stability=ThermoEval(passed=False, val=-2337.6874578462666)),
+                                           heterodimer=ThermoEval(passed=True, val=-2859.312457849366),
+                                           end_stability=ThermoEval(passed=True, val=-2337.6874578462666)),
     'PRIMER_PAIR_PENALTY': 0.0645958748797284,
     'PRIMER_LEFT_PENALTY': 0.03158519466222742,
     'PRIMER_RIGHT_PENALTY': 0.033010680217500976,
@@ -188,10 +188,10 @@ Primer3Pair 3:
 {   'result_num': 3,
     'passed': False,
     'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.911580164679236), rev=ThermoEval(passed=True, val=57.864141554695905)),
-                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-548.6789578431635), rev=ThermoEval(passed=False, val=-431.3492289246824)),
-                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-6151.056144614115), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
-                                           heterodimer=ThermoEval(passed=False, val=-2859.117457846267),
-                                           end_stability=ThermoEval(passed=False, val=-1145.9474578462614)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=-548.6789578431635), rev=ThermoEval(passed=True, val=-431.3492289246824)),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-6151.056144614115), rev=ThermoEval(passed=True, val=-2820.0812289277856)),
+                                           heterodimer=ThermoEval(passed=True, val=-2859.117457846267),
+                                           end_stability=ThermoEval(passed=True, val=-1145.9474578462614)),
     'PRIMER_PAIR_PENALTY': 0.06555861025333343,
     'PRIMER_LEFT_PENALTY': 0.03438019631141742,
     'PRIMER_RIGHT_PENALTY': 0.031178413941916006,
@@ -217,11 +217,11 @@ Primer3Pair 3:
     'PRIMER_PAIR_PRODUCT_TM': 90.79712114714373}
 Primer3Pair 4:
 {   'result_num': 4,
-    'passed': False,
+    'passed': True,
     'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.93085432845051), rev=ThermoEval(passed=True, val=57.864141554695905)),
-                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=0.0), rev=ThermoEval(passed=False, val=-431.3492289246824)),
-                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-2754.6612289277873), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
-                                           heterodimer=ThermoEval(passed=False, val=-2241.1449156925228),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=0.0), rev=ThermoEval(passed=True, val=-431.3492289246824)),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=-2754.6612289277873), rev=ThermoEval(passed=True, val=-2820.0812289277856)),
+                                           heterodimer=ThermoEval(passed=True, val=-2241.1449156925228),
                                            end_stability=ThermoEval(passed=True, val=1722.9299999999996)),
     'PRIMER_PAIR_PENALTY': 0.0667127737546025,
     'PRIMER_LEFT_PENALTY': 0.03553435981268649,
@@ -271,10 +271,10 @@ Primer3Pair 4:
     transcriptome_non_targets None
     thermo_results
 Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.94645064912533)),
-                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=True, val=40.60604215373678)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=-68.6904578462636), rev=ThermoEval(passed=True, val=40.60604215373678)),
                      homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-3229.2040603004425)),
-                     heterodimer=ThermoEval(passed=False, val=-2859.312457849366),
-                     end_stability=ThermoEval(passed=False, val=-2337.6874578462666))
+                     heterodimer=ThermoEval(passed=True, val=-2859.312457849366),
+                     end_stability=ThermoEval(passed=True, val=-2337.6874578462666))
 >>> PrimerDesign <<<
     ppair_id SLC46A1+1_pp2
     features_5p [ExonFeature(genome=Coords(name='chr17', start=28404953, end=28404973, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=3583, end=3603, strand='-', size=4418))]
@@ -296,10 +296,10 @@ Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734
     transcriptome_non_targets None
     thermo_results
 Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.8623676251748)),
-                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=True, val=0.0)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=-68.6904578462636), rev=ThermoEval(passed=True, val=0.0)),
                      homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-9405.828602451082)),
-                     heterodimer=ThermoEval(passed=False, val=-4959.379915689431),
-                     end_stability=ThermoEval(passed=False, val=-2269.6374578462637))
+                     heterodimer=ThermoEval(passed=True, val=-4959.379915689431),
+                     end_stability=ThermoEval(passed=True, val=-2269.6374578462637))
 >>> PrimerDesign <<<
     ppair_id SLC46A1+1_pp1
     features_5p [ExonFeature(genome=Coords(name='chr17', start=28404953, end=28404973, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=3583, end=3603, strand='-', size=4418))]
@@ -321,15 +321,15 @@ Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734
     transcriptome_non_targets None
     thermo_results
 Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734773975594), rev=ThermoEval(passed=True, val=57.864141554695905)),
-                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-68.6904578462636), rev=ThermoEval(passed=False, val=-431.3492289246824)),
-                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
-                     heterodimer=ThermoEval(passed=False, val=-2200.1512289277853),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=-68.6904578462636), rev=ThermoEval(passed=True, val=-431.3492289246824)),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-3017.6936867647455), rev=ThermoEval(passed=True, val=-2820.0812289277856)),
+                     heterodimer=ThermoEval(passed=True, val=-2200.1512289277853),
                      end_stability=ThermoEval(passed=True, val=1722.9299999999996))
 >>> PrimerDesign <<<
     ppair_id SLC46A1+1_pp5
     features_5p [ExonFeature(genome=Coords(name='chr17', start=28404938, end=28404958, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=3568, end=3588, strand='-', size=4418))]
     features_3p [ExonFeature(genome=Coords(name='chr17', start=28399118, end=28399138, strand='+', size=83257441), trans=Coords(name='FSM_44519', start=2409, end=2429, strand='-', size=4418))]
-    passed False
+    passed True
     priority 4
     amplicon_coords FSM_44519:830-2009
     amplicon_length 1179
@@ -346,9 +346,9 @@ Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.863734
     transcriptome_non_targets None
     thermo_results
 Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.93085432845051), rev=ThermoEval(passed=True, val=57.864141554695905)),
-                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=0.0), rev=ThermoEval(passed=False, val=-431.3492289246824)),
-                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-2754.6612289277873), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
-                     heterodimer=ThermoEval(passed=False, val=-2241.1449156925228),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=0.0), rev=ThermoEval(passed=True, val=-431.3492289246824)),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=-2754.6612289277873), rev=ThermoEval(passed=True, val=-2820.0812289277856)),
+                     heterodimer=ThermoEval(passed=True, val=-2241.1449156925228),
                      end_stability=ThermoEval(passed=True, val=1722.9299999999996))
 >>> PrimerDesign <<<
     ppair_id SLC46A1+1_pp4
@@ -371,8 +371,8 @@ Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.930854
     transcriptome_non_targets None
     thermo_results
 Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=57.911580164679236), rev=ThermoEval(passed=True, val=57.864141554695905)),
-                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-548.6789578431635), rev=ThermoEval(passed=False, val=-431.3492289246824)),
-                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-6151.056144614115), rev=ThermoEval(passed=False, val=-2820.0812289277856)),
-                     heterodimer=ThermoEval(passed=False, val=-2859.117457846267),
-                     end_stability=ThermoEval(passed=False, val=-1145.9474578462614))
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=-548.6789578431635), rev=ThermoEval(passed=True, val=-431.3492289246824)),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=False, val=-6151.056144614115), rev=ThermoEval(passed=True, val=-2820.0812289277856)),
+                     heterodimer=ThermoEval(passed=True, val=-2859.117457846267),
+                     end_stability=ThermoEval(passed=True, val=-1145.9474578462614))
 
