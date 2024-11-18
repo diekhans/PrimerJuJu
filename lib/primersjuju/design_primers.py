@@ -40,6 +40,10 @@ class PrimerDesign:
     def amplicon_length(self):
         return len(self.amplicon_coords)
 
+    @property
+    def passed(self):
+        return self.primer3_pair.passed
+
     def dump(self, fh=sys.stderr):
         def _lfmt(l):
             if l is None:
@@ -124,7 +128,8 @@ def _build_primer_design(target_transcript, target_id, result_num, primer3_pair,
     amplicon_coords = features_to_transcript_coords(features_5p + features_3p)
     assert len(amplicon_coords) == primer3_pair.PRIMER_PAIR_PRODUCT_SIZE
 
-    if uniqueness_query is not None:
+    # don't do expensive query if it didn't pass thermodynamics eval
+    if primer3_pair.passed and (uniqueness_query is not None):
         uniqueness = primer_uniqueness_query(uniqueness_query, target_transcript, ppair_id, primer3_pair)
     else:
         uniqueness = primer_uniqueness_none()

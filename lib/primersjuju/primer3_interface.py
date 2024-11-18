@@ -193,8 +193,7 @@ def primer3_design(primer3_config, target_transcript, *, debug=False):
     global PRIMER_FIRST_BASE_INDEX must be zero.
     """
     results = design_primers(primer3_config, target_transcript, debug=debug)
-    if primer3_config.thermo_filters is not None:
-        primer3_thermo_evals(results, primer3_config)
+    primer3_thermo_evals(results, primer3_config)
     return results
 
 def primer3_dump_args(fh, primer3_config, target_transcript, *, global_args=None, seq_args=None):

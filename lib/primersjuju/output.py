@@ -178,7 +178,8 @@ def _primer_to_bed(primer_designs, primer_design, *, color=None, add_extra=True)
                            extra_cols=extra_cols)
 
 def build_primer_beds(primer_designs):
-    return [_primer_to_bed(primer_designs, pd) for pd in primer_designs.designs]
+    return [_primer_to_bed(primer_designs, pd) for pd in primer_designs.designs
+            if pd.passed]
 
 def _genome_hit_to_bed(hit, name, color):
     return _gcoords_to_bed(name, color, (hit.left_gcoords, hit.right_gcoords),
@@ -199,7 +200,8 @@ def _build_genome_uniqueness_hits_beds(primer_design):
 def build_genome_uniqueness_hits_beds(primer_designs):
     beds = []
     for primer_design in primer_designs.designs:
-        beds.extend(_build_genome_uniqueness_hits_beds(primer_design))
+        if primer_design.passed:
+            beds.extend(_build_genome_uniqueness_hits_beds(primer_design))
     return beds
 
 def _transcriptome_hit_to_bed(hit, name_pre, color):
@@ -226,7 +228,8 @@ def _build_transcriptome_uniqueness_hits_beds(primer_design):
 def build_transcriptome_uniqueness_hits_beds(primer_designs):
     beds = []
     for primer_design in primer_designs.designs:
-        beds.extend(_build_transcriptome_uniqueness_hits_beds(primer_design))
+        if primer_design.passed:
+            beds.extend(_build_transcriptome_uniqueness_hits_beds(primer_design))
     return beds
 
 def _write_beds(beds, bed_file):
@@ -308,23 +311,31 @@ def output_target_beds(outdir, primer_targets, primer_designs):
 
 _design_tsv_header = ("target_id", "transcript_id", "design_status", "position", "browser",
                       "primer_id", "left_primer", "right_primer", "pri",
-                      "amplicon_len", "amplicon_exons", "left_delta_G", "right_delta_G",
+                      "amplicon_len", "amplicon_exons",
+                      "tm_left_degC", "tm_right_degC",
+                      "hairpin_left_dG", "hairpin_right_dG",
+                      "homodimer_left_dG", "homodimer_right_dG",
+                      "heterodimer_dG", "end_stability_dG",
                       "on_target_trans", "off_target_trans",
                       "on_target_genome", "off_target_genome",
                       "amplicon")
+
+def _fmt_flt(val, precision=2):
+    return "{:.{}f}".format(val, precision)
 
 def _write_primer_pair_design_trans(fh, primer_designs, primer_design, trans, first, hub_urls):
     "write one design, if primer_design is None, it means there were no primers found"
     row = [primer_designs.primer_targets.target_id, trans.trans_id.name,
            primer_designs.status]
     if first:
-        row.extend([primer_designs.target_transcript.bounds.genome,
-                    _make_design_browser_link(primer_designs, hub_urls)])
+        row += [primer_designs.target_transcript.bounds.genome,
+                _make_design_browser_link(primer_designs, hub_urls)]
     else:
-        row.extend(2 * [''])
+        row += 2 * ['']
     if primer_design is None:
-        row += 13 * ['']
+        row += 19 * ['']
     else:
+        thermo_results = primer_design.primer3_pair.thermo_results
         amp_seq = primer_design_amplicon(primer_design, trans)
         row += [primer_design.ppair_id,
                 primer_design.primer3_pair.PRIMER_LEFT_SEQUENCE,
@@ -332,8 +343,14 @@ def _write_primer_pair_design_trans(fh, primer_designs, primer_design, trans, fi
                 primer_design.priority,
                 len(amp_seq),
                 _count_amplicon_exons(primer_design, trans),
-                primer_design.primer3_pair.PRIMER_LEFT_END_STABILITY,
-                primer_design.primer3_pair.PRIMER_RIGHT_END_STABILITY,
+                _fmt_flt(thermo_results.tm.fwd.val),
+                _fmt_flt(thermo_results.tm.rev.val),
+                _fmt_flt(thermo_results.hairpin.fwd.val.dg),
+                _fmt_flt(thermo_results.hairpin.rev.val.dg),
+                _fmt_flt(thermo_results.homodimer.fwd.val.dg),
+                _fmt_flt(thermo_results.homodimer.rev.val.dg),
+                _fmt_flt(thermo_results.heterodimer.val.dg),
+                _fmt_flt(thermo_results.end_stability.val.dg),
                 _make_uniqeness_hits_browser_gcoords(primer_design.uniqueness.transcriptome_on_targets),
                 _make_uniqeness_hits_browser_gcoords(primer_design.uniqueness.transcriptome_off_targets),
                 _make_uniqeness_hits_browser_gcoords(primer_design.uniqueness.genome_on_targets),

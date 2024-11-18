@@ -10,7 +10,7 @@ suffixes = .debug.txt designs.tsv primers.bed target.bed uniqueness.bed
 
 define diff_results =
 @for f in $$(cd output && find $@ -type f) ; do diff -u expected/$$f output/$$f ; done
-@tawk 'NF != 18{print "Expect 18 columns, got " NF ":" NR " in "FILENAME; exit 1}' output/$@/*/*.designs.tsv
+@tawk 'NF != 24{print "Error " FILENAME ":" NR " Expected 24 columns, got " NF ; exit 1}' output/$@/*/*.designs.tsv > /dev/stderr
 endef
 
 test: prog-tests
@@ -18,7 +18,8 @@ test-fast: prog-tests-fast
 
 prog-tests: prog-tests-fast prog-tests-slow
 
-prog-tests-fast: test-check-good test-design-subset test-design-skip-error test-disabled
+prog-tests-fast: test-check-good test-design-subset test-design-skip-error test-disabled \
+	test-thermo-no-ispcr
 
 prog-tests-slow: test-design-good3
 
@@ -56,6 +57,11 @@ test-design-skip-error: mkdirs
 test-disabled: mkdirs
 	rm -rf output/$@
 	${primers_juju} ${DEBUG} --conf=input/config1.py design ${hg38_hub_url_args} input/disabled.tsv output/$@
+	${diff_results}
+
+test-thermo-no-ispcr: mkdirs
+	rm -rf output/$@
+	${primers_juju} ${DEBUG} --conf=input/configthermo.py design ${hg38_hub_url_args} input/LRGASP_WTC11_Target_subset3.tsv output/$@
 	${diff_results}
 
 

@@ -10,8 +10,8 @@ from .config import Primer3ThermoArgs
 
 class ThermoEval(namedtuple("ThermoEval", ("passed", "val"))):
     """Result for thermodynamic checks.  The passed field is True if the check
-    was within the configured range.  The val field are either a TM or a
-    delta-G.
+    was within the configured range.  The val field are either a float TM or
+    a primer3.thermoanalysis.ThermoResult object.
     """
     __slots__ = ()
 
@@ -59,7 +59,8 @@ def eval_tm1(seq, args, filters):
                          max_nn_length=args.max_nn_length,
                          tm_method=args.tm_method,
                          salt_corrections_method=args.salt_corrections_method)
-    return ThermoEval(filters.tm_range[0] <= tm <= filters.tm_range[1], tm)
+    passed = (filters is None) or (filters.tm_range[0] <= tm <= filters.tm_range[1])
+    return ThermoEval(passed, tm)
 
 def eval_tm(primer3_pair, args, filters):
     return ThermoEvalPair(eval_tm1(primer3_pair.PRIMER_LEFT_SEQUENCE, args, filters),
@@ -75,7 +76,8 @@ def eval_hairpin1(seq, args, filters):
                               max_loop=args.max_loop,
                               output_structure=False)
     tr.check_exc()
-    return ThermoEval(tr.dg >= filters.hairpin_min_dg, tr.dg)
+    passed = (filters is None) or (tr.dg >= filters.hairpin_min_dg)
+    return ThermoEval(passed, tr)
 
 def eval_hairpin(primer3_pair, args, filters):
     return ThermoEvalPair(eval_hairpin1(primer3_pair.PRIMER_LEFT_SEQUENCE, args, filters),
@@ -91,7 +93,8 @@ def eval_homodimer1(seq, args, filters):
                                 max_loop=args.max_loop,
                                 output_structure=False)
     tr.check_exc()
-    return ThermoEval(tr.dg >= filters.homodimer_min_dg, tr.dg)
+    passed = (filters is None) or (tr.dg >= filters.homodimer_min_dg)
+    return ThermoEval(passed, tr)
 
 def eval_homodimer(primer3_pair, args, filters):
     return ThermoEvalPair(eval_homodimer1(primer3_pair.PRIMER_LEFT_SEQUENCE, args, filters),
@@ -108,7 +111,8 @@ def eval_heterodimer(primer3_pair, args, filters):
                                   max_loop=args.max_loop,
                                   output_structure=False)
     tr.check_exc()
-    return ThermoEval(tr.dg >= filters.heterodimer_min_dg, tr.dg)
+    passed = (filters is None) or (tr.dg >= filters.heterodimer_min_dg)
+    return ThermoEval(passed, tr)
 
 def eval_end_stability(primer3_pair, args, filters):
     tr = primer3.calc_end_stability(primer3_pair.PRIMER_LEFT_SEQUENCE,
@@ -120,20 +124,16 @@ def eval_end_stability(primer3_pair, args, filters):
                                     temp_c=args.temp_c,
                                     max_loop=args.max_loop)
     tr.check_exc()
-    return ThermoEval(tr.dg >= filters.end_stability_min_dg, tr.dg)
+    passed = (filters is None) or (tr.dg >= filters.end_stability_min_dg)
+    return ThermoEval(passed, tr)
 
 def eval_thermodynamics(primer3_pair, args, filters):
     results = Primer3ThermoResults()
-    if filters.tm_range is not None:
-        results.tm = eval_tm(primer3_pair, args, filters)
-    if filters.hairpin_min_dg is not None:
-        results.hairpin = eval_hairpin(primer3_pair, args, filters)
-    if filters.homodimer_min_dg is not None:
-        results.homodimer = eval_homodimer(primer3_pair, args, filters)
-    if filters.heterodimer_min_dg is not None:
-        results.heterodimer = eval_heterodimer(primer3_pair, args, filters)
-    if filters.end_stability_min_dg is not None:
-        results.end_stability = eval_end_stability(primer3_pair, args, filters)
+    results.tm = eval_tm(primer3_pair, args, filters)
+    results.hairpin = eval_hairpin(primer3_pair, args, filters)
+    results.homodimer = eval_homodimer(primer3_pair, args, filters)
+    results.heterodimer = eval_heterodimer(primer3_pair, args, filters)
+    results.end_stability = eval_end_stability(primer3_pair, args, filters)
     return results
 
 def evalulate_thermodynamics(primer3_pair, args, filters):

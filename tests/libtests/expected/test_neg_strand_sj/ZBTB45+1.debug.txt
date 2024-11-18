@@ -53,7 +53,11 @@ None
 Primer3Pair 0:
 {   'result_num': 0,
     'passed': True,
-    'thermo_results': None,
+    'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=60.72572777545006), rev=ThermoEval(passed=True, val=57.95332765937736)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=40.67, dg=-134.35, dh=-11500.00, ds=-36.65)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=36.95, dg=4.41, dh=-30400.00, ds=-98.03))),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=11.43, dg=-6310.58, dh=-54600.00, ds=-155.70)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-25.91, dg=-3276.79, dh=-31200.00, ds=-90.03))),
+                                           heterodimer=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-2.09, dg=-5302.67, dh=-41000.00, ds=-115.10)),
+                                           end_stability=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-33.49, dg=-567.81, dh=-36200.00, ds=-114.89))),
     'PRIMER_PAIR_PENALTY': 3.8216576018201636,
     'PRIMER_LEFT_PENALTY': 3.7817699113506364,
     'PRIMER_RIGHT_PENALTY': 0.039887690469527115,
@@ -80,7 +84,11 @@ Primer3Pair 0:
 Primer3Pair 1:
 {   'result_num': 1,
     'passed': True,
-    'thermo_results': None,
+    'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=59.780523193301725), rev=ThermoEval(passed=True, val=57.95332765937736)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=40.67, dg=-134.35, dh=-11500.00, ds=-36.65)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=36.95, dg=4.41, dh=-30400.00, ds=-98.03))),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=11.43, dg=-6310.58, dh=-54600.00, ds=-155.70)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-25.91, dg=-3276.79, dh=-31200.00, ds=-90.03))),
+                                           heterodimer=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-2.09, dg=-5302.67, dh=-41000.00, ds=-115.10)),
+                                           end_stability=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-33.49, dg=-567.81, dh=-36200.00, ds=-114.89))),
     'PRIMER_PAIR_PENALTY': 3.882810914503409,
     'PRIMER_LEFT_PENALTY': 3.842923224033882,
     'PRIMER_RIGHT_PENALTY': 0.039887690469527115,
@@ -107,7 +115,11 @@ Primer3Pair 1:
 Primer3Pair 2:
 {   'result_num': 2,
     'passed': True,
-    'thermo_results': None,
+    'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=60.72572777545006), rev=ThermoEval(passed=True, val=57.80895273875189)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=40.67, dg=-134.35, dh=-11500.00, ds=-36.65)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=42.12, dg=-428.98, dh=-26400.00, ds=-83.74))),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=11.43, dg=-6310.58, dh=-54600.00, ds=-155.70)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=2.89, dg=-4616.22, dh=-53400.00, ds=-157.29))),
+                                           heterodimer=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-6.50, dg=-4788.20, dh=-39400.00, ds=-111.60)),
+                                           end_stability=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-71.30, dg=-1021.95, dh=-19000.00, ds=-57.97))),
     'PRIMER_PAIR_PENALTY': 3.886257141506576,
     'PRIMER_LEFT_PENALTY': 3.7817699113506364,
     'PRIMER_RIGHT_PENALTY': 0.10448723015593941,
@@ -134,7 +146,11 @@ Primer3Pair 2:
 Primer3Pair 3:
 {   'result_num': 3,
     'passed': True,
-    'thermo_results': None,
+    'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=60.72572777545006), rev=ThermoEval(passed=True, val=58.02005924097296)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=40.67, dg=-134.35, dh=-11500.00, ds=-36.65)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=False, tm=0.00, dg=0.00, dh=0.00, ds=0.00))),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=11.43, dg=-6310.58, dh=-54600.00, ds=-155.70)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-36.74, dg=-2358.05, dh=-28400.00, ds=-83.97))),
+                                           heterodimer=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-6.50, dg=-4788.20, dh=-39400.00, ds=-111.60)),
+                                           end_stability=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-71.30, dg=-1021.95, dh=-19000.00, ds=-57.97))),
     'PRIMER_PAIR_PENALTY': 3.888389183415768,
     'PRIMER_LEFT_PENALTY': 3.7817699113506364,
     'PRIMER_RIGHT_PENALTY': 0.10661927206513155,
@@ -161,7 +177,11 @@ Primer3Pair 3:
 Primer3Pair 4:
 {   'result_num': 4,
     'passed': True,
-    'thermo_results': None,
+    'thermo_results': Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=60.72572777545006), rev=ThermoEval(passed=True, val=58.0031199464557)),
+                                           hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=40.67, dg=-134.35, dh=-11500.00, ds=-36.65)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=False, tm=0.00, dg=0.00, dh=0.00, ds=0.00))),
+                                           homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=11.43, dg=-6310.58, dh=-54600.00, ds=-155.70)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=5.77, dg=-5885.76, dh=-47600.00, ds=-134.50))),
+                                           heterodimer=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-2.49, dg=-5014.45, dh=-42500.00, ds=-120.86)),
+                                           end_stability=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-33.65, dg=-2307.80, dh=-30200.00, ds=-89.93))),
     'PRIMER_PAIR_PENALTY': 3.889569889168513,
     'PRIMER_LEFT_PENALTY': 3.7817699113506364,
     'PRIMER_RIGHT_PENALTY': 0.10779997781787642,
@@ -210,7 +230,11 @@ Primer3Pair 4:
     transcriptome_off_targets None
     transcriptome_non_targets None
     thermo_results
-None
+Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=60.72572777545006), rev=ThermoEval(passed=True, val=57.95332765937736)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=40.67, dg=-134.35, dh=-11500.00, ds=-36.65)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=36.95, dg=4.41, dh=-30400.00, ds=-98.03))),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=11.43, dg=-6310.58, dh=-54600.00, ds=-155.70)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-25.91, dg=-3276.79, dh=-31200.00, ds=-90.03))),
+                     heterodimer=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-2.09, dg=-5302.67, dh=-41000.00, ds=-115.10)),
+                     end_stability=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-33.49, dg=-567.81, dh=-36200.00, ds=-114.89)))
 >>> PrimerDesign <<<
     ppair_id ZBTB45+1_pp2
     features_5p [ExonFeature(genome=Coords(name='chr19', start=58517663, end=58517673, strand='+', size=58617616), trans=Coords(name='FSM_45682', start=2050, end=2060, strand='-', size=2136))
@@ -232,7 +256,11 @@ None
     transcriptome_off_targets None
     transcriptome_non_targets None
     thermo_results
-None
+Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=59.780523193301725), rev=ThermoEval(passed=True, val=57.95332765937736)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=40.67, dg=-134.35, dh=-11500.00, ds=-36.65)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=36.95, dg=4.41, dh=-30400.00, ds=-98.03))),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=11.43, dg=-6310.58, dh=-54600.00, ds=-155.70)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-25.91, dg=-3276.79, dh=-31200.00, ds=-90.03))),
+                     heterodimer=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-2.09, dg=-5302.67, dh=-41000.00, ds=-115.10)),
+                     end_stability=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-33.49, dg=-567.81, dh=-36200.00, ds=-114.89)))
 >>> PrimerDesign <<<
     ppair_id ZBTB45+1_pp4
     features_5p [ExonFeature(genome=Coords(name='chr19', start=58517663, end=58517673, strand='+', size=58617616), trans=Coords(name='FSM_45682', start=2050, end=2060, strand='-', size=2136))
@@ -254,7 +282,11 @@ None
     transcriptome_off_targets None
     transcriptome_non_targets None
     thermo_results
-None
+Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=60.72572777545006), rev=ThermoEval(passed=True, val=58.02005924097296)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=40.67, dg=-134.35, dh=-11500.00, ds=-36.65)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=False, tm=0.00, dg=0.00, dh=0.00, ds=0.00))),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=11.43, dg=-6310.58, dh=-54600.00, ds=-155.70)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-36.74, dg=-2358.05, dh=-28400.00, ds=-83.97))),
+                     heterodimer=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-6.50, dg=-4788.20, dh=-39400.00, ds=-111.60)),
+                     end_stability=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-71.30, dg=-1021.95, dh=-19000.00, ds=-57.97)))
 >>> PrimerDesign <<<
     ppair_id ZBTB45+1_pp3
     features_5p [ExonFeature(genome=Coords(name='chr19', start=58517663, end=58517673, strand='+', size=58617616), trans=Coords(name='FSM_45682', start=2050, end=2060, strand='-', size=2136))
@@ -276,7 +308,11 @@ None
     transcriptome_off_targets None
     transcriptome_non_targets None
     thermo_results
-None
+Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=60.72572777545006), rev=ThermoEval(passed=True, val=57.80895273875189)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=40.67, dg=-134.35, dh=-11500.00, ds=-36.65)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=42.12, dg=-428.98, dh=-26400.00, ds=-83.74))),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=11.43, dg=-6310.58, dh=-54600.00, ds=-155.70)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=2.89, dg=-4616.22, dh=-53400.00, ds=-157.29))),
+                     heterodimer=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-6.50, dg=-4788.20, dh=-39400.00, ds=-111.60)),
+                     end_stability=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-71.30, dg=-1021.95, dh=-19000.00, ds=-57.97)))
 >>> PrimerDesign <<<
     ppair_id ZBTB45+1_pp5
     features_5p [ExonFeature(genome=Coords(name='chr19', start=58517663, end=58517673, strand='+', size=58617616), trans=Coords(name='FSM_45682', start=2050, end=2060, strand='-', size=2136))
@@ -298,5 +334,9 @@ None
     transcriptome_off_targets None
     transcriptome_non_targets None
     thermo_results
-None
+Primer3ThermoResults(tm=ThermoEvalPair(fwd=ThermoEval(passed=True, val=60.72572777545006), rev=ThermoEval(passed=True, val=58.0031199464557)),
+                     hairpin=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=40.67, dg=-134.35, dh=-11500.00, ds=-36.65)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=False, tm=0.00, dg=0.00, dh=0.00, ds=0.00))),
+                     homodimer=ThermoEvalPair(fwd=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=11.43, dg=-6310.58, dh=-54600.00, ds=-155.70)), rev=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=5.77, dg=-5885.76, dh=-47600.00, ds=-134.50))),
+                     heterodimer=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-2.49, dg=-5014.45, dh=-42500.00, ds=-120.86)),
+                     end_stability=ThermoEval(passed=True, val=ThermoResult(structure_found=True, tm=-33.65, dg=-2307.80, dh=-30200.00, ds=-89.93)))
 

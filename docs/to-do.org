@@ -158,20 +158,7 @@ specification sheet, making it a reliable choice. (edited)
 The standard concentration of DMSO (dimethyl sulfoxide) in a PCR reaction
 typically ranges from 1–10% (v/v). For most applications, a concentration of
 5% DMSO is commonly used as a starting point. DMSO helps stabilize DNA
-melting, particularly in GC-rich or structurally complex templates, by
-reducing secondary structures that can hinder primer binding and DNA
-polymerase activity.
-According to information from Takara, which provides DNA
-polymerases, customers have reported improved amplification of GC-rich
-templates by adding DMSO to reactions using PrimeSTAR MAX DNA Polymerase or
-CloneAmp HiFi PCR Premix. The recommended concentration of DMSO for these
-applications is between 2.5% and 5%.  However, I usually do not add DMSO to my
-PCR reactions.
-
-
-** temp_c (Union[float, int]) – Simulation temperature for dG (Celsius)
-This is what I found:
-When evaluating Gibbs free energy change (ΔG) for primer dimers in PCR, the simulation temperature typically used is:
+2When evaluating Gibbs free energy change (ΔG) for primer dimers in PCR, the simulation temperature typically used is:
 
 37°C
 This temperature reflects physiological conditions and is commonly applied when assessing the stability of DNA interactions, including primer-dimer formation.

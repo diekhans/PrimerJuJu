@@ -13,9 +13,9 @@ class GenomeConfig:
     cases the corresponding off target query to be skipped."""
 
     def __init__(self,
-                 genome_data: GenomeData,
-                 genome_ispcr_spec: IsPcrServerSpec,
-                 transcriptome_ispcr_spec: IsPcrServerSpec):
+                 genome_data: GenomeData, *,
+                 genome_ispcr_spec: IsPcrServerSpec = None,
+                 transcriptome_ispcr_spec: IsPcrServerSpec = None):
         self.genome_data = genome_data
         self.genome_ispcr_spec = genome_ispcr_spec
         self.transcriptome_ispcr_spec = transcriptome_ispcr_spec
@@ -86,10 +86,13 @@ class Primer3Config:
         self.mishyb_lib = None
 
         ##
-        # thermoanalysis
+        # thermodynamics analysis
+        # If thermo_args is not specified, then the defaults are used, which
+        # is a Primer3ThermoArgs() with no valued changed.  If Primer3ThermoFitlers
+        # is not specified, then analysis is run with no filtering.
         ##
-        self.thermo_filters = None  # Primer3ThermoFilters, set of filter by thermodynamic attributes
-        self.thermo_args = None  # Primer3ThermoArgs, use defaults if None
+        self.thermo_args = None     # Primer3ThermoArgs, defaulted if not specified
+        self.thermo_filters = None  # Primer3ThermoFilters
 
 
 _default_primer3_config = Primer3Config()
